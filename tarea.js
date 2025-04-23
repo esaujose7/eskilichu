@@ -1,6 +1,11 @@
-const palabraMasLarga = (frase) => {
+const palabraMasLarga = () => {
+  const frase = process.argv[2];
     let palabra = '';
     let palabraLarga = '';
+
+    if(frase==undefined){
+      return console.log("error, frase mal ingresada");
+    };
   
     for (let i = 0; i <= frase.length; i++) {
       const letra = frase[i];
@@ -17,6 +22,6 @@ const palabraMasLarga = (frase) => {
     console.log("la palabra mas larga es",palabraLarga,"con",palabraLarga.length,"caracteres");
 }; 
 
+palabraMasLarga();
 
-const frase = process.argv[2];
-palabraMasLarga(frase);
+module.exports = palabraMasLarga;
