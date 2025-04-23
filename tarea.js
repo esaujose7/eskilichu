@@ -23,8 +23,5 @@ const palabraMasLarga = (frase) => {
     console.log("la palabra mas larga es",palabraLarga,"con",palabraLarga.length,"caracteres");
 }; 
 
-const oracion = process.argv[2];
-palabraMasLarga(oracion);
 
-
-module.exports = palabraMasLarga;
+module.exports =palabraMasLarga;
