@@ -4,7 +4,7 @@
   "description": "Tarea para Tomas.",
   "main": "index.js",
   "scripts": {
-    "app": "node index.js"
+    "code": "node index.js"
   },
   "repository": {
     "type": "git",
