@@ -1,0 +1,20 @@
+{
+  "name": "eskilichu",
+  "version": "1.0.0",
+  "description": "Tarea para Tomas.",
+  "main": "index.js",
+  "scripts": {
+    "app": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esaujose7/eskilichu.git"
+  },
+  "keywords": ["learning"],
+  "author": "Esau Murillo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/esaujose7/eskilichu/issues"
+  },
+  "homepage": "https://github.com/esaujose7/eskilichu#readme"
+}
