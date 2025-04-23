@@ -24,4 +24,3 @@ const palabraMasLarga = () => {
 
 palabraMasLarga();
 
-module.exports = palabraMasLarga;
