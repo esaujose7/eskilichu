@@ -4,7 +4,7 @@ const palabraMasLarga = () => {
     let palabraLarga = '';
 
     if(frase==undefined){
-      return console.log("error, frase mal ingresada");
+      return console.log("Error, No ingresaste la frase");
     };
   
     for (let i = 0; i <= frase.length; i++) {
