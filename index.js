@@ -1,7 +1,6 @@
 console.log('https://www.youtube.com/shorts/7WqvLhKXvJE')
 
-const palabraMasLarga = () => {
-    const frase = process.argv[2];
+const palabraMasLarga = (frase) => {
       let palabra = '';
       let palabraLarga = '';
   
@@ -23,6 +22,6 @@ const palabraMasLarga = () => {
       }
       console.log("la palabra mas larga es",palabraLarga,"con",palabraLarga.length,"caracteres");
   }; 
-  
-  palabraMasLarga();
 
+  const oracion = process.argv[2];
+  palabraMasLarga(oracion);
