@@ -1,6 +1,9 @@
 const fs = require("fs");
 const path = require("path");
-const palabraMasLarga = require("./string");
+const longestWord = require("./string");
+let content; 
+
+
 
 const languageNames = {
     en: "Inglés",
@@ -8,44 +11,56 @@ const languageNames = {
     pt: "Portugués",
     uk: "Ucraniano",
     vi: "Vietnamita"
-};
+}; 
 
 //2
-const languagesDir = path.join(__dirname,"languages");
+ const languagesDir = path.join(__dirname,"languages"); 
 
-const getLanguagues = () => {
-   return fs.readdirSync(languagesDir)
+const getLanguages = () => {
+   return fs.readdirSync(languagesDir);
 };
 
 //3
-const getContentForLanguages = (languague) => {
-    const languaguesPath = path.join(languagesDir, languague);
+const getContentForLanguages = (language) => {
+    const languaguesPath = path.join(languagesDir, language);
 
-    if(fs.existsSync(languaguesPath)){
-        const content=fs.readFileSync(languaguesPath, "utf-8");
+    if (fs.existsSync(languaguesPath)){
         console.log("your lenguague is available");
+        content= fs.readFileSync(languaguesPath, "utf-8");
         console.log(content);
-        palabraMasLarga(content);
+        return content
     }
     else{
-        console.log("Standar Error : Your language is not available ")
+        console.log("Standard Error : Your language is not available ");
     }
 
 };
 
 //4
-const getLanguaguesName = (languagueCode) => {
-    if(languageNames[languagueCode]){
-        return languageNames[languagueCode]
+const getLanguagesName = (languageCode) => {
+    if(languageNames[languageCode]){
+       console.log("your selected language is",languageNames[languageCode]);
     }
+    else
+        console.log("We do not have the requested language")
 };
 
 //2
-console.log("lenguajes disponibles",getLanguagues());
+console.log("your languages",getLanguages());
 
 //3
 const lang = process.argv[2];
-getContentForLanguages(lang);
+ getContentForLanguages(lang);
+
 
 //4
-console.log("tu idioma seleccionado es",getLanguaguesName(lang));
+getLanguagesName(lang);
+
+//5
+longestWord(content);
+ 
+
+module.exports =getLanguages;
+module.exports =getContentForLanguages;
+module.exports =getLanguagesName;
+

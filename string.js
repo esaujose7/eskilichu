@@ -1,10 +1,10 @@
-const palabraMasLarga = (frase) => {
+const longestWord = (frase) => {
   
     let palabra = '';
     let palabraLarga = '';
 
     if(frase==undefined){
-      return console.log("Error, No ingresaste la frase");
+      return console.log("Error, You did not enter the phrase");
     };
   
     for (let i = 0; i <= frase.length; i++) {
@@ -20,8 +20,8 @@ const palabraMasLarga = (frase) => {
         palabra = '';
       }
     }
-    console.log("la palabra mas larga es",palabraLarga,"con",palabraLarga.length,"caracteres");
+    console.log("the longest word is",palabraLarga,"with",palabraLarga.length,"characters");
 }; 
 
 
-module.exports =palabraMasLarga;
+module.exports =longestWord;
