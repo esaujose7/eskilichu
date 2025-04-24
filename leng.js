@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-const longestWord = require("./string");
 let content; 
 
 
@@ -25,7 +24,7 @@ const getContentForLanguages = (language) => {
     const languaguesPath = path.join(languagesDir, language);
 
     if (fs.existsSync(languaguesPath)){
-        console.log("your lenguague is available");
+        console.log("your lenguage is available");
         content= fs.readFileSync(languaguesPath, "utf-8");
         console.log(content);
         return content
@@ -45,7 +44,7 @@ const getLanguagesName = (languageCode) => {
         console.log("We do not have the requested language")
 };
 
-//2
+/* //2
 console.log("your languages",getLanguages());
 
 //3
@@ -57,10 +56,11 @@ const lang = process.argv[2];
 getLanguagesName(lang);
 
 //5
-longestWord(content);
+longestWord(content); */
  
 
-module.exports =getLanguages;
-module.exports =getContentForLanguages;
-module.exports =getLanguagesName;
+module.exports = {getLanguages ,
+    getContentForLanguages,
+    getLanguagesName
+};
 
