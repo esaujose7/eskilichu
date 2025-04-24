@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-let content; 
 
 
 
@@ -25,12 +24,13 @@ const getContentForLanguages = (language) => {
 
     if (fs.existsSync(languaguesPath)){
         console.log("your lenguage is available");
-        content= fs.readFileSync(languaguesPath, "utf-8");
+        const content= fs.readFileSync(languaguesPath, "utf-8");
         console.log(content);
         return content
     }
     else{
         console.log("Standard Error : Your language is not available ");
+        return null
     }
 
 };
@@ -44,19 +44,6 @@ const getLanguagesName = (languageCode) => {
         console.log("We do not have the requested language")
 };
 
-/* //2
-console.log("your languages",getLanguages());
-
-//3
-const lang = process.argv[2];
- getContentForLanguages(lang);
-
-
-//4
-getLanguagesName(lang);
-
-//5
-longestWord(content); */
  
 
 module.exports = {getLanguages ,
