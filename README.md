@@ -90,3 +90,22 @@ Con eso planteado, entonces, queremos lo siguiente:
 3. Nuestro nuevo modulo deberia tener una funcion que dado un lenguaje segun ISO 639, darme el contenido que hay para ese lenguaje `getContentForLanguage`. En caso de que no exista el lenguaje, deberia devolverme un error por consola y devolverlo por standard error.
 4. Nuestro nuevo modulo deberia tener una funcion que dado un lenguaje en base a la especificacion ISO 639, traducirmelo a el nombre exacto del lenguaje. Esto deberia funcionar al menos para los lenguajes que mi aplicacion provee.
 5. Implementar la funcion de la tarea 1 en los contenidos de todos los lenguajes de nuestra aplicacion, haciendo uso de las funciones que implementamos en nuestro modulo.
+
+## Tarea 4 - npm Scripts
+
+Vamos a dejar de usar `node` para ejecutar nuestro proyecto y empezar a usar `npm`.
+
+En el repositorio tenemos un archivo llamado `package.json`. Ahi se encuentra informacion sobre el repositorio, dependencias que se han instalado para funcionar y scripts disponibles para ejecutar.
+
+Actualmente hay un solo script, llamado `code`. Para ejecutarlo, basta con hacer `npm run code`.
+
+Partiendo de esta idea... se pide lo siguiente:
+
+Partiendo de los puntos 2, 3 y 4 de nuestra Tarea #3, vamos a querer poder ejecutar esas funciones a traves de scripts de npm.
+
+1. `npm run list-languages` -> deberia escupirme por consola el listado de lenguajes disponibles en mi aplicacion.
+2. `npm run get-language-content ${languageIso639}` -> deberia escupirme el contenido del lenguaje pasado por CLI. ${languageIso639} -> es una variable pasada por consola.
+3. `npm run get-human-readable-language ${languageIso639}` -> deberia poder pasarle un lenguaje en el formato ISO 639 por CLI y traducirmelo a algo que yo pueda entender.
+
+Como veras, ya todas estas funciones estan implementadas. Ahora lo que queremos es disponibilizarlas para ejecutarlas por consola una por una.
+Toda la orquestracion de las llamadas a las funciones tiene que suceder desde un entrypoint, que en nuestro caso es el `index.js`
