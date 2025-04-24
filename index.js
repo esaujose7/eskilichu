@@ -1,7 +1,20 @@
-console.log('https://www.youtube.com/shorts/7WqvLhKXvJE')
+const {getLanguages , getContentForLanguages, getLanguagesName}=require("./leng");
+const longestWord = require("./string");
+const lang = process.argv[2];
 
-const palabraMasLarga = require("./string");
+//------------------------
+//2
+console.log("your languages",getLanguages());
 
-const frase = process.argv[2];
+//3
+const content = getContentForLanguages(lang);
 
-palabraMasLarga(frase)
+//4
+console.log("your selected language is",getLanguagesName(lang)); 
+
+//5
+if (content) {
+    longestWord(content);
+}
+
+
