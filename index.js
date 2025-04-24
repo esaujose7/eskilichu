@@ -1,20 +1,16 @@
 const {getLanguages , getContentForLanguages, getLanguagesName}=require("./leng");
 const longestWord = require("./string");
-const frase = process.argv[2];
+const lang = process.argv[2];
 
 //------------------------
 //2
 console.log("your languages",getLanguages());
 
 //3
-const lang = process.argv[2];
-
 const content = getContentForLanguages(lang);
 
 //4
-getLanguagesName(lang); 
-
-
+console.log("your selected language is",getLanguagesName(lang)); 
 
 //5
 if (content) {

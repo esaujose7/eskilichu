@@ -1,8 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 
-
-
 const languageNames = {
     en: "Inglés",
     es: "Español",
@@ -29,23 +27,18 @@ const getContentForLanguages = (language) => {
         return content
     }
     else{
-        console.log("Standard Error : Your language is not available ");
-        return null
+        console.error("Error : Your language is not available");
     }
-
 };
 
 //4
 const getLanguagesName = (languageCode) => {
     if(languageNames[languageCode]){
-       console.log("your selected language is",languageNames[languageCode]);
+       return languageNames[languageCode];
     }
     else
-        console.log("We do not have the requested language")
+        return null
 };
-
- 
-
 module.exports = {getLanguages ,
     getContentForLanguages,
     getLanguagesName
